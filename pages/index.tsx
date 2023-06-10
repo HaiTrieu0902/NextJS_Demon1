@@ -1,40 +1,15 @@
-import React, { useEffect } from 'react';
-import type { NextPage } from 'next';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import HeroSection from '@/components/home/hero';
+import MainLayout from '@/components/layout/main';
+import { Box } from '@mui/material';
 
-const Home: NextPage = () => {
-    const router = useRouter();
-
-    useEffect(() => {
-        // setTimeout(() => {
-        //     router.push('./about');
-        // }, 3000);
-    }, []);
-
+const Home = () => {
     return (
-        <div>
-            <div className="bg-slate-500 w-full h-100vh">
-                <span>hello I cant stop my name</span>
-                <p>huuh</p>
-                <p>ooo</p>
-
-                <Link href="/about">
-                    <span>CLick me!</span>
-                </Link>
-            </div>
-        </div>
+        <Box component={'main'}>
+            <HeroSection></HeroSection>
+        </Box>
     );
 };
 
-export default Home;
+Home.Layout = MainLayout;
 
-// export default function Home() {
-//     return (
-//         <div>
-//             <div className="bg-slate-500 w-full h-100vh">
-//                 <span>hello I cant stop my name</span>
-//             </div>
-//         </div>
-//     );
-// }
+export default Home;

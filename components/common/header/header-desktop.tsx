@@ -19,7 +19,10 @@ export function HeaderDesktop() {
                         <Link key={route.path} href={route.path} passHref>
                             <MuiLink
                                 sx={{ ml: 2, fontWeight: 'medium' }}
-                                className={clsx({ active: router.pathname === route.path })}
+                                className={clsx(
+                                    { active: router.pathname === route.path },
+                                    'no-underline',
+                                )}
                             >
                                 {route.label}
                             </MuiLink>
@@ -33,7 +36,11 @@ export function HeaderDesktop() {
                     )}
 
                     {isLoggedIn && (
-                        <MuiLink sx={{ ml: 2, fontWeight: 'medium', cursor: 'pointer' }} onClick={logout}>
+                        <MuiLink
+                            className="no-underline"
+                            sx={{ ml: 2, fontWeight: 'medium', cursor: 'pointer' }}
+                            onClick={logout}
+                        >
                             Logout
                         </MuiLink>
                     )}

@@ -1,7 +1,10 @@
+import { Auth } from '@/components/common/auth';
+import Header from '@/components/common/header';
 import { AdminLayout } from '@/components/layout/admin';
 import { Box, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+
 export interface AboutPageProps {}
 
 const About = (props: AboutPageProps) => {
@@ -39,13 +42,17 @@ const About = (props: AboutPageProps) => {
             <Typography component="h1" variant="h3" color="primary.main">
                 About Page
             </Typography>
-            <ul className="post-list">
-                {postList.map((post: any) => (
-                    <li key={post.id}>{post.title}</li>
-                ))}
-            </ul>
 
-            <button onClick={handleNextClick}>Next page</button>
+            <Header />
+
+            <Auth>
+                <ul className="post-list">
+                    {postList.map((post: any) => (
+                        <li key={post.id}>{post.title}</li>
+                    ))}
+                </ul>
+                <button onClick={handleNextClick}>Next page</button>
+            </Auth>
         </Box>
     );
 };

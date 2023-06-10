@@ -24,6 +24,38 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: roboto.style.fontFamily,
+        // fontFamily: ['Heebo', 'sans-serif'].join(','),
+    },
+    components: {
+        MuiContainer: {
+            styleOverrides: {
+                maxWidthLg: {
+                    maxWidth: '1200px',
+                    '@media (min-width: 900px)': { maxWidth: '1200px' },
+                },
+                maxWidthMd: {
+                    maxWidth: '860px',
+                    '@media (min-width: 768px)': { maxWidth: '860px' },
+                },
+            },
+            defaultProps: {
+                maxWidth: 'lg',
+            },
+            variants: [],
+        },
+        MuiLink: {
+            defaultProps: {
+                underline: 'none',
+            },
+            styleOverrides: {
+                root: {
+                    color: 'black',
+                    '&:hover , &.active': {
+                        color: '#ff6464',
+                    },
+                },
+            },
+        },
     },
 });
 
