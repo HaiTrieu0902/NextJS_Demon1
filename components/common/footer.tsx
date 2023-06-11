@@ -23,11 +23,18 @@ const socialIcon = [
 
 const Footer = () => {
     return (
-        <Box component={'footer'} py={2} textAlign={'center'}>
-            <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
+        <Box component={'footer'} py={2} textAlign={'center'}  sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',  
+            alignItems: 'center', 
+            gap: '10px' 
+            
+        }}>
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={1} textAlign={'center'} >
                 {socialIcon.map((social,index) => (
                     <Box key={index} component={'a'}> 
-                        <Icon component={social.icon} fontSize='large'  />
+                        <Icon component={social.icon} fontSize='medium'  />
                     </Box>
                 ))}
 
