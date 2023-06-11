@@ -1,6 +1,5 @@
 import { Facebook, Instagram , Twitter, LinkedIn } from '@mui/icons-material';
-import { Box, Stack, Typography } from '@mui/material';
-import {Icon} from 'next/icon'
+import { Box, Icon, Stack, Typography } from '@mui/material';
 type Props = {};
 
 const socialIcon = [
@@ -27,8 +26,8 @@ const Footer = () => {
         <Box component={'footer'} py={2} textAlign={'center'}>
             <Stack>
                 {socialIcon.map((social,index) => (
-                    <Box key={index}> 
-                        <Icon />
+                    <Box key={index} component={'a'}> 
+                        <Icon component={social.icon} fontSize='large'  />
 
                     </Box>
                 ))}
