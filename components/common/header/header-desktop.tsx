@@ -10,7 +10,8 @@ export function HeaderDesktop() {
     const router = useRouter();
     const { profile, logout } = useAuth();
     const isLoggedIn = Boolean(profile?.username);
-    const routeList = ROUTE_LIST.filter((route) => !route.requireLogin || isLoggedIn);
+    // const routeList = ROUTE_LIST.filter((route) => !route.requireLogin || isLoggedIn);
+    const routeList = ROUTE_LIST.filter((route) => route || isLoggedIn);
     return (
         <Box display={{ xs: 'none', md: 'block' }} py={2}>
             <Container>
@@ -18,6 +19,7 @@ export function HeaderDesktop() {
                     {routeList.map((route) => (
                         <Link key={route.path} href={route.path} passHref>
                             <MuiLink
+                                component={'span'}
                                 sx={{ ml: 2, fontWeight: 'medium' }}
                                 className={clsx(
                                     { active: router.pathname === route.path },
@@ -31,7 +33,7 @@ export function HeaderDesktop() {
 
                     {!isLoggedIn && (
                         <Link href="/login" passHref>
-                            <MuiLink sx={{ ml: 2, fontWeight: 'medium' }}>Login</MuiLink>
+                            <MuiLink   sx={{ ml: 2, fontWeight: 'medium' }}>Login</MuiLink>
                         </Link>
                     )}
 

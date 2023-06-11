@@ -1,12 +1,19 @@
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import Logo from '../../src/assets/images/cotolam.jpg';
+import RecentPosts from './recent-posts';
+import FeatureWorks from './feature-works';
 const HeroSection = () => {
     return (
-        <Box>
-            <Container className="mt-4">
-                <Stack direction={'row'} alignItems={'center'}>
+        <Box component={'section'} pt={{ xs: 4, md: 12 }} pb={{ xs: 7, md: 9 }}>
+            <Container>
+                <Stack
+                    direction={{ xs: 'column-reverse', md: 'row' }}
+                    alignItems={{ xs: 'center', md: 'flex-start' }}
+                    textAlign={{ xs: 'center', md: 'left' }}
+                >
                     <Box
+                        pt={{ xs: 4 }}
                         sx={{
                             paddingRight: '20px',
                         }}
@@ -31,14 +38,13 @@ const HeroSection = () => {
                             display: 'flex',
                             align: 'center',
                             justifyContent: 'center',
-                            minWidth: '240px',
+                            minWidth: '200px',
                             boxShadow: '-5px 13px',
                             color: 'gray',
                             borderRadius: '50%',
                         }}
                     >
-                      
-                        <Image className="w-60 h-60 rounded-[50%] " src={Logo} alt="khoc"></Image>
+                        <Image className="w-52 h-52 rounded-[50%] " src={Logo} alt="khoc"></Image>
                     </Box>
                 </Stack>
             </Container>

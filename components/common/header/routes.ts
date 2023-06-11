@@ -6,10 +6,16 @@ export const ROUTE_LIST = [
     {
         label: 'Works',
         path: '/works',
-        requireLogin: true,
+        // requireLogin: true,
     },
     {
         label: 'Blog',
         path: '/blog',
     },
 ];
+
+export const ROUTES = {
+    home: '/',
+    blog: '/blog',
+    works: '/works',
+};

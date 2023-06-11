@@ -16,7 +16,7 @@ const theme = createTheme({
             main: '#556cd6',
         },
         secondary: {
-            main: '#19857b',
+            main: '#d4efec',
         },
         error: {
             main: red.A400,
@@ -58,5 +58,12 @@ const theme = createTheme({
         },
     },
 });
+
+theme.typography.h3 = {
+    fontSize: '2rem',
+    [theme.breakpoints.up('md')]: {
+        fontSize: '3rem',
+    },
+};
 
 export default theme;
