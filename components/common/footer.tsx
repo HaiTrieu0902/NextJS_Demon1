@@ -24,11 +24,10 @@ const socialIcon = [
 const Footer = () => {
     return (
         <Box component={'footer'} py={2} textAlign={'center'}>
-            <Stack>
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
                 {socialIcon.map((social,index) => (
                     <Box key={index} component={'a'}> 
                         <Icon component={social.icon} fontSize='large'  />
-
                     </Box>
                 ))}
 
